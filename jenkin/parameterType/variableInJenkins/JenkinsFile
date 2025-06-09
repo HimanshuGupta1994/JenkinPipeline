@@ -1,0 +1,17 @@
+pipeline {
+    agent any
+   environment {
+    def myString = "This is Himanshu Gupta"
+    def myNumber = 100
+    def myBoolean = false
+   }
+    stages {
+        stage ("Variable Param") {
+            steps {
+                echo "Display String : ${myString}"
+                echo "Display Number : ${myNumber}"
+                echo "Display Boolean : ${myBoolean}"
+            }
+        }
+    }
+}

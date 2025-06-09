@@ -1,0 +1,13 @@
+pipeline {
+    agent any
+    parameters {
+        choice(choices : ["TEST", "DEV", "QA", "PROD"], description: "Please Enable", name : "myChoice")
+    }
+    stages {
+        stage ("Dropdown Param") {
+            steps {
+                echo "Selected Env. is : ${params.myChoice}"
+            }
+        }
+    }
+}
